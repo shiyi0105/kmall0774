@@ -20,6 +20,9 @@ public interface PmsBaseAttrValueMapper {
     List<PmsBaseAttrValue> selectByExample(PmsBaseAttrValueExample example);
 
     PmsBaseAttrValue selectByPrimaryKey(Long id);
+    //批量添加
+    int insertBatch(@Param("attrId") Long attrId, @Param("valueList") List<PmsBaseAttrValue> valueList);
+
 
     int updateByExampleSelective(@Param("record") PmsBaseAttrValue record, @Param("example") PmsBaseAttrValueExample example);
 
