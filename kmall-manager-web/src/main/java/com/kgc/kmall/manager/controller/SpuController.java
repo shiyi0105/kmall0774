@@ -1,7 +1,9 @@
 package com.kgc.kmall.manager.controller;
 
 import com.kgc.kmall.bean.PmsBaseSaleAttr;
+import com.kgc.kmall.bean.PmsProductImage;
 import com.kgc.kmall.bean.PmsProductInfo;
+import com.kgc.kmall.bean.PmsProductSaleAttr;
 import com.kgc.kmall.service.SpuService;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.dubbo.config.annotation.Reference;
@@ -71,5 +73,17 @@ public class SpuController {
     @RequestMapping("/saveSpuInfo")
     public String saveSpuInfo(PmsProductInfo pmsProductInfo){
         return "success";
+    }
+
+    @RequestMapping("/spuSaleAttrList")
+    public List<PmsProductSaleAttr> spuSaleAttrList(Long spuId){
+        List<PmsProductSaleAttr> pmsProductSaleAttrList=spuService.spuSaleAttrList(spuId);
+        return pmsProductSaleAttrList;
+    }
+
+    @RequestMapping("/spuImageList")
+    public List<PmsProductImage> spuImageList(Long spuId){
+        List<PmsProductImage> pmsProductImageList = spuService.spuImageList(spuId);
+        return pmsProductImageList;
     }
 }

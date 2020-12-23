@@ -12,15 +12,15 @@ public class PmsProductSaleAttr implements Serializable{
 
     private String saleAttrName;
 
-    public List<pmsProductSaleAttrValue> getSpuSaleAttrValueList() {
+    public List<PmsProductSaleAttrValue> getSpuSaleAttrValueList() {
         return spuSaleAttrValueList;
     }
 
-    public void setSpuSaleAttrValueList(List<pmsProductSaleAttrValue> spuSaleAttrValueList) {
+    public void setSpuSaleAttrValueList(List<PmsProductSaleAttrValue> spuSaleAttrValueList) {
         this.spuSaleAttrValueList = spuSaleAttrValueList;
     }
 
-    private List<pmsProductSaleAttrValue> spuSaleAttrValueList;
+    private List<PmsProductSaleAttrValue> spuSaleAttrValueList;
 
     public Long getId() {
         return id;
