@@ -1,14 +1,18 @@
 package com.kgc.kmall.bean;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+
 import java.io.Serializable;
-
+@ApiModel("PmsProductSaleAttrValue")
 public class PmsProductSaleAttrValue implements Serializable{
+    @ApiModelProperty("编号")
     private Long id;
-
+    @ApiModelProperty("商品编号")
     private Long productId;
-
+    @ApiModelProperty("saleAttrId")
     private Long saleAttrId;
-
+    @ApiModelProperty("saleAttrValueName")
     private String saleAttrValueName;
 
     public Long getId() {
