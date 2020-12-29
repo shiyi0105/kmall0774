@@ -17,6 +17,8 @@ public interface PmsSkuInfoMapper {
 
     int insertSelective(PmsSkuInfo record);
 
+    List<PmsSkuInfo> selectBySpuId(Long spuId);
+
     List<PmsSkuInfo> selectByExample(PmsSkuInfoExample example);
 
     PmsSkuInfo selectByPrimaryKey(Long id);

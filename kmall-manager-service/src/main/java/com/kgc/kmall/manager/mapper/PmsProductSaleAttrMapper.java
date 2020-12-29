@@ -20,6 +20,7 @@ public interface PmsProductSaleAttrMapper {
     List<PmsProductSaleAttr> selectByExample(PmsProductSaleAttrExample example);
 
     PmsProductSaleAttr selectByPrimaryKey(Long id);
+    List<PmsProductSaleAttr> spuSaleAttrListIsCheck(@Param("spuId") Long spuId,@Param("skuId") Long skuId);
 
     int updateByExampleSelective(@Param("record") PmsProductSaleAttr record, @Param("example") PmsProductSaleAttrExample example);
 
