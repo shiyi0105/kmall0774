@@ -1,13 +1,12 @@
 package com.kgc.kmall.itemweb.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.kgc.kmall.bean.PmsProductSaleAttr;
 import com.kgc.kmall.bean.PmsSkuInfo;
 import com.kgc.kmall.bean.PmsSkuSaleAttrValue;
 import com.kgc.kmall.service.SkuService;
 import com.kgc.kmall.service.SpuService;
 
-
-import org.apache.dubbo.common.json.JSON;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -47,20 +46,25 @@ public class ItemController {
 
 
         //根据spuid获得skuid和销售属性值id的对应关系，并拼接成字符串
-//        List<PmsSkuInfo> pmsSkuInfos = skuService.selectBySpuId(pmsSkuInfo.getSpuId());
-////       Map<String, String> skuSaleAttrHash = new HashMap<>();
-//        Map<String,String> skuSaleAttrHash=new HashMap<>();
-//        for (PmsSkuInfo skuInfo : pmsSkuInfos) {
-//            String k = "";
-//            String v=skuInfo.getId()+"";
-//            for (PmsSkuSaleAttrValue pmsSkuSaleAttrValue : skuInfo.getSkuSaleAttrValueList()) {
-//                k+=pmsSkuSaleAttrValue.getSaleAttrValueId()+"|";
-//            }
-//            skuSaleAttrHash.put(k,v);
-//        }
-//        // 将sku的销售属性hash表放到页面
-// String skuSaleAttrHashJsonStr = JSON.toJSONString(skuSaleAttrHash);
-//        model.addAttribute("skuSaleAttrHashJsonStr",skuSaleAttrHashJsonStr);
+        List<PmsSkuInfo> pmsSkuInfos = skuService.selectBySpuId(pmsSkuInfo.getSpuId());
+//       Map<String, Long> skuSaleAttrHash = new HashMap<>();
+        Map<String,Long> map=new HashMap<>();
+        if (pmsSkuInfos!=null&&pmsSkuInfos.size()>0){
+            for (PmsSkuInfo skuInfo : pmsSkuInfos) {
+            //Long v = skuInfo.getId();
+            if (skuInfo.getSkuAttrValueList() != null && skuInfo.getSkuAttrValueList().size() > 0) {
+                String k = "";
+                for (PmsSkuSaleAttrValue pmsSkuSaleAttrValue : skuInfo.getSkuSaleAttrValueList()) {
+                    k += pmsSkuSaleAttrValue.getSaleAttrValueId() + "|";
+                }
+               map.put(k,skuInfo.getId());
+            }
+        }
+
+        }
+        // 将sku的销售属性hash表放到页面
+ String skuSaleAttrHashJsonStr = JSON.toJSONString(map);
+        model.addAttribute("skuSaleAttrHashJsonStr",skuSaleAttrHashJsonStr);
 
         return "item";
     }

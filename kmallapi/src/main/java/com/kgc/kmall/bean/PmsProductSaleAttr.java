@@ -5,15 +5,10 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.util.List;
-@ApiModel("PmsProductSaleAttr")
 public class PmsProductSaleAttr implements Serializable{
-    @ApiModelProperty("编号")
     private Long id;
-    @ApiModelProperty("商品id")
     private Long productId;
-    @ApiModelProperty("saleAttrId")
     private Long saleAttrId;
-    @ApiModelProperty("saleAttrName")
     private String saleAttrName;
 
     public List<PmsProductSaleAttrValue> getSpuSaleAttrValueList() {

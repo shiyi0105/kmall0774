@@ -21,7 +21,6 @@ import java.util.List;
 
 @CrossOrigin
 @RestController
-@Api(tags = "spu相关接口",description = "提供spu相关 API")
 public class SpuController {
 
 
@@ -32,7 +31,6 @@ public class SpuController {
     String fileServer;
 
 
-    @ApiOperation("spu列表")
     @RequestMapping("/spuList")
     public List<PmsProductInfo> spuList(Long catalog3Id){
         List<PmsProductInfo> infoList = spuService.spuList(catalog3Id);
@@ -40,14 +38,12 @@ public class SpuController {
     }
 
 
-    @ApiOperation("销售属性列表")
     @RequestMapping("/baseSaleAttrList")
     public List<PmsBaseSaleAttr> baseSaleAttrList(){
         List<PmsBaseSaleAttr> saleAttrList = spuService.baseSaleAttrList();
         return saleAttrList;
     }
 
-    @ApiOperation("上传文件")
     @RequestMapping("fileUpload")
     public  String fileUpload(@RequestParam("file")MultipartFile file){
         try{
@@ -76,21 +72,18 @@ public class SpuController {
 
     }
 
-    @ApiOperation("保存spu信息")
     @RequestMapping("/saveSpuInfo")
     public String saveSpuInfo(@RequestBody PmsProductInfo pmsProductInfo){
         Integer integer = spuService.saveSpuInfo(pmsProductInfo);
         return integer>0?"success":"fail";
     }
 
-    @ApiOperation("spu销售属性列表")
     @RequestMapping("/spuSaleAttrList")
     public List<PmsProductSaleAttr> spuSaleAttrList(Long spuId){
         List<PmsProductSaleAttr> pmsProductSaleAttrList=spuService.spuSaleAttrList(spuId);
         return pmsProductSaleAttrList;
     }
 
-    @ApiOperation("spu图片列表")
     @RequestMapping("/spuImageList")
     public List<PmsProductImage> spuImageList(Long spuId){
         List<PmsProductImage> pmsProductImageList = spuService.spuImageList(spuId);

@@ -5,45 +5,43 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.util.Date;
-@ApiModel("member")
+
 public class Member implements Serializable{
-    @ApiModelProperty("编号")
+
     private Long id;
-    @ApiModelProperty("用户等级id")
+
     private Long memberLevelId;
-    @ApiModelProperty("用户姓名")
+
     private String username;
-    @ApiModelProperty("密码")
+
     private String password;
-    @ApiModelProperty("昵称")
+
     private String nickname;
-    @ApiModelProperty("手机号")
+
     private String phone;
-    @ApiModelProperty("状态")
+
     private Integer status;
-    @ApiModelProperty("创建时间")
+
     private Date createTime;
-    @ApiModelProperty("头像")
+
     private String icon;
-    @ApiModelProperty("等级")
+
     private Integer gender;
-    @ApiModelProperty("生日")
+
     private Date birthday;
-    @ApiModelProperty("城市")
+
     private String city;
-    @ApiModelProperty("职位")
+
     private String job;
-    @ApiModelProperty("个性签名")
+
     private String personalizedSignature;
-    @ApiModelProperty("来源")
+
     private Integer sourceType;
-    @ApiModelProperty("积分")
+
     private Integer integration;
-    @ApiModelProperty("增长")
+
     private Integer growth;
-    @ApiModelProperty("幸运数字")
     private Integer luckeyCount;
-    @ApiModelProperty("历史积分")
     private Integer historyIntegration;
 
     public Long getId() {

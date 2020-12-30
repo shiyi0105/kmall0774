@@ -140,12 +140,12 @@
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+ <!-- <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
     from pms_sku_info
     where id = #{id,jdbcType=BIGINT}
-  </select>
+  </select>-->
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
     delete from pms_sku_info

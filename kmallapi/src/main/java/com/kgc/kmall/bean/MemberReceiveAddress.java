@@ -4,27 +4,18 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
-@ApiModel("MemberReceiveAddress")
 public class MemberReceiveAddress implements Serializable {
-    @ApiModelProperty("编号")
     private Long id;
-    @ApiModelProperty("用户id")
     private Long memberId;
-    @ApiModelProperty("名字")
     private String name;
-    @ApiModelProperty("电话")
     private String phoneNumber;
-    @ApiModelProperty("默认状态")
     private Integer defaultStatus;
-    @ApiModelProperty("邮编")
     private String postCode;
-    @ApiModelProperty("province")
     private String province;
-    @ApiModelProperty("城市")
     private String city;
-    @ApiModelProperty("region")
+
     private String region;
-    @ApiModelProperty("详细地址")
+
     private String detailAddress;
 
     public Long getId() {

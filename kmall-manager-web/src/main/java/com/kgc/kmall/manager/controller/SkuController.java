@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 @CrossOrigin
 @RestController
-@Api(tags = "sku相关接口",description = "提供sku相关的API")
 public class SkuController {
 
 
@@ -21,7 +20,6 @@ public class SkuController {
     SkuService skuService;
 
 
-    @ApiOperation("保存sku")
     @RequestMapping("/saveSkuInfo")
     public String saveSkuInfo(@RequestBody PmsSkuInfo skuInfo){
         String result = skuService.saveSkuInfo(skuInfo);

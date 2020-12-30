@@ -5,25 +5,15 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.util.List;
-@ApiModel("PmsSkuInfo")
 public class PmsSkuInfo implements Serializable {
-    @ApiModelProperty("编号")
     private Long id;
-    @ApiModelProperty("spuId")
     private Long spuId;
-    @ApiModelProperty("价格")
     private Double price;
-    @ApiModelProperty("skuName")
     private String skuName;
-    @ApiModelProperty("skuDes")
     private String skuDesc;
-    @ApiModelProperty("重量")
     private Double weight;
-    @ApiModelProperty("tmId")
     private Long tmId;
-    @ApiModelProperty("三级分类id")
     private Long catalog3Id;
-    @ApiModelProperty("sku默认图")
     private String skuDefaultImg;
 
     public List<PmsSkuImage> getSkuImageList() {

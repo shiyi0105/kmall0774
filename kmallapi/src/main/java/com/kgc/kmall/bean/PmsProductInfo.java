@@ -5,17 +5,11 @@ import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
 import java.util.List;
-@ApiModel("PmsProductInfo")
 public class PmsProductInfo  implements Serializable{
-    @ApiModelProperty("编号")
     private Long id;
-    @ApiModelProperty("商品名字")
     private String productName;
-    @ApiModelProperty("描述")
     private String description;
-    @ApiModelProperty("三级分类id")
     private Long catalog3Id;
-    @ApiModelProperty("tmId")
     private Long tmId;
 
     private List<PmsProductImage> spuImageList;

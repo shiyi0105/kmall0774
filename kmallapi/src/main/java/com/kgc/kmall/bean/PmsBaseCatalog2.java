@@ -4,13 +4,9 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
-@ApiModel("PmsBaseCatalog2")
 public class PmsBaseCatalog2 implements Serializable {
-    @ApiModelProperty("编号")
     private Integer id;
-    @ApiModelProperty("名字")
     private String name;
-    @ApiModelProperty("一级分类id")
     private Integer catalog1Id;
 
     public Integer getId() {

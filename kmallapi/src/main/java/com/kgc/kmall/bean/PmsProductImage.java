@@ -4,15 +4,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
-@ApiModel("PmsProductImage")
 public class PmsProductImage implements Serializable {
-    @ApiModelProperty("编号")
     private Long id;
-    @ApiModelProperty("商品编号")
     private Long productId;
-    @ApiModelProperty("图片名字")
     private String imgName;
-    @ApiModelProperty("图片地址")
     private String imgUrl;
 
     public Long getId() {

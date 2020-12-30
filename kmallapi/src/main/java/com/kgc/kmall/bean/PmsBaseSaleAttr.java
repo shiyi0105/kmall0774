@@ -4,11 +4,8 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.io.Serializable;
-@ApiModel("PmsBaseSaleAttr")
 public class PmsBaseSaleAttr implements Serializable{
-    @ApiModelProperty("编号")
     private Long id;
-    @ApiModelProperty("名字")
     private String name;
 
     public Long getId() {
